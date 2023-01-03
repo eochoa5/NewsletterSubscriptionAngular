@@ -1,0 +1,29 @@
+<button  class="btn btn-right" routerLink="/"><fa-icon [icon]="faHome"></fa-icon></button>
+<br/><br/>
+<form  class="add-form" (ngSubmit)="onSubmit()">
+    <div class="form-control">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        [(ngModel)]="name"
+        placeholder="User name"
+        required
+      />
+    </div>
+    <div class="form-control">
+      <label for="email">Email</label>
+      <input
+        type="text"
+        name="email"
+        [(ngModel)]="email"
+        id="email"
+        required
+        placeholder="User email"
+      />
+    </div>
+    <input type="submit" value="Add User" class="btn btn-block" />
+    <div *ngIf="displayMessage" class="form-control alert alert-success">User added successfully</div>
+  </form>
+  
